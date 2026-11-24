@@ -254,18 +254,55 @@ function renderGallery() {
 }
 
 /* ==========================================================================
-   6. RENDER TRAVEL & FAQ
+   6. RENDER VENUE & TRAVEL (Matching romitayushi.in/invite)
    ========================================================================== */
 function renderTravel() {
-  const container = document.getElementById('travel-grid');
-  if (!container || !WEDDING_CONFIG.travel) return;
+  const venuesContainer = document.getElementById('venues');
+  const travelContainer = document.getElementById('travel-info');
 
-  container.innerHTML = WEDDING_CONFIG.travel.map((info) => `
-    <div class="travel-card reveal">
-      <h4 class="travel-card__title">${info.title}</h4>
-      <p class="travel-card__desc">${info.desc}</p>
-    </div>
-  `).join('');
+  if (venuesContainer && WEDDING_CONFIG.venues) {
+    venuesContainer.innerHTML = WEDDING_CONFIG.venues.map((venue) => `
+      <article class="venue reveal">
+        <div class="venue__pic">
+          ${venue.mapEmbed ? `
+            <iframe src="${venue.mapEmbed}" title="Map to ${venue.name}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          ` : `
+            <div class="w-full h-full flex items-center justify-center bg-amber-100 text-stone-600 font-serif">Map Preview</div>
+          `}
+        </div>
+        <div class="venue__body">
+          <h3 class="venue__name">${venue.name}</h3>
+          <p class="venue__events">${venue.events || 'Wedding Celebrations'}</p>
+          <p class="venue__addr">${venue.address}</p>
+          <p class="venue__note">${venue.note || 'All celebrations will take place at the resort.'}</p>
+          <a class="venue__btn" href="${venue.map}" target="_blank" rel="noopener noreferrer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-6.6 7-12a7 7 0 0 0-14 0c0 5.4 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
+            Get Directions
+          </a>
+        </div>
+      </article>
+    `).join('');
+  }
+
+  if (travelContainer && WEDDING_CONFIG.travel) {
+    const icons = {
+      plane: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3.5c-.5-.5-2.5 0-4 1.5L13.5 8.5 5.3 6.7c-.8-.2-1.6.1-2.1.7l-.7.7c-.5.5-.4 1.4.2 1.9l4.5 3.5-3.5 3.5-2.1-.4c-.5-.1-1.1.1-1.4.5l-.3.3c-.4.4-.3 1.1.2 1.5l2.8 2.2 2.2 2.8c.4.5 1.1.6 1.5.2l.3-.3c.4-.3.6-.9.5-1.4l-.4-2.1 3.5-3.5 3.5 4.5c.5.6 1.4.7 1.9.2l.7-.7c.6-.5.9-1.3.7-2.1Z"/></svg>',
+      hotel: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Z"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>',
+      guide: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>'
+    };
+
+    travelContainer.innerHTML = WEDDING_CONFIG.travel.map((col, idx) => `
+      <div class="travel__col reveal" style="transition-delay: ${idx * 100}ms">
+        <h3>${icons[col.icon] || ''} ${col.title}</h3>
+        <dl>
+          ${col.items.map(([term, desc]) => `
+            <dt>${term}</dt>
+            <dd>${desc}</dd>
+          `).join('')}
+        </dl>
+      </div>
+    `).join('');
+  }
 }
 
 /* ==========================================================================

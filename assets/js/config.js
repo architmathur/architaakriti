@@ -147,23 +147,45 @@ const WEDDING_CONFIG = {
     }
   ],
 
-  // Travel & Accommodation FAQ
+  // Wedding Venue Information (matching romitayushi.in reference)
+  venues: [
+    {
+      id: "tanya",
+      name: "Tanya Resort",
+      address: "Delhi-Jaipur Highway / Bypass, Alwar, Rajasthan 301001",
+      note: "All celebrations will take place at the resort.",
+      events: "Lagan · Tel Madha / Haldi Bhaat · Engagement & Sangeet · Shubh Vivah",
+      map: "https://maps.google.com/?q=Tanya+Resort+Alwar+Rajasthan",
+      mapEmbed: "https://maps.google.com/maps?q=Tanya+Resort+Alwar+Rajasthan&z=14&output=embed"
+    }
+  ],
+
+  // Travel & Accommodation (3-Column Layout from reference site)
   travel: [
     {
-      title: "Wedding Venue",
-      desc: "Tanya Resort, Alwar, Rajasthan. Nestled in the serene Aravalli hills, conveniently accessible from Delhi and Jaipur."
+      title: "Getting here",
+      icon: "plane",
+      items: [
+        ["By air", "Jaipur (JAI) and Delhi (DEL) are the nearest airports, each roughly 2.5 to 3 hours from Alwar by road via the Delhi-Mumbai Expressway."],
+        ["By rail", "Alwar Junction (AWR) is well connected with regular Shatabdi & Vande Bharat Express on the Delhi–Jaipur line, a short drive from the resort."],
+        ["Pickups", "Please let the Mathur & Nagpal families know your travel plans and we'll gladly assist with your arrival pickups."]
+      ]
     },
     {
-      title: "Nearest Airport",
-      desc: "Delhi IGI Airport (DEL) & Jaipur Airport (JAI) are both approximately 2.5 to 3 hours drive via the Delhi-Mumbai Expressway."
+      title: "Where to stay",
+      icon: "hotel",
+      items: [
+        ["Tanya Resort", "Comfortable room accommodations have been arranged at the venue for our esteemed guests."],
+        ["Hospitality Desk", "Our family helpdesk team is on-site at the resort lobby to warmly welcome you and assist throughout your stay."]
+      ]
     },
     {
-      title: "Railway Connectivity",
-      desc: "Alwar Junction (AWR) is well connected with direct Vande Bharat Express, Shatabdi Express, and major trains."
-    },
-    {
-      title: "Guest Accommodation & Hospitality",
-      desc: "Comfortable room accommodations have been arranged at Tanya Resort for our esteemed guests. Our helpdesk team is on-site to assist you."
+      title: "Good to know",
+      icon: "guide",
+      items: [
+        ["Late-December weather", "Pleasant sunny winter days (~22°C) and crisp, chilly evenings (~8°C–12°C). Carry a warm jacket or shawl for the evening Sangeet."],
+        ["Getting around", "Every celebration is hosted right at Tanya Resort, so there is no hassle of traveling between ceremonies!"]
+      ]
     }
   ]
 };
