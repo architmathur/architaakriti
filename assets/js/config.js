@@ -23,9 +23,9 @@ const WEDDING_CONFIG = {
   hashtag: "#ArchitKiAakriti",
 
   // Main Wedding Date for Countdown (ISO 8601 format)
-  weddingDateTime: "2026-12-27T19:00:00+05:30",
-  displayDate: "DECEMBER 27, 2026",
-  dateRange: "26 – 27 December 2026",
+  weddingDateTime: "2026-12-26T10:30:00+05:30",
+  displayDate: "26th & 27th December 2026",
+  dateRange: "26th & 27th December 2026",
   city: "Alwar, Rajasthan",
   primaryVenue: "Tanya Resort, Alwar",
 
@@ -55,7 +55,7 @@ const WEDDING_CONFIG = {
   // Day-wise Wedding Celebrations
   eventDays: [
     {
-      dayTitle: "Day 1 · Saturday, 26 December 2026",
+      dayTitle: "Day 1 · Saturday, 26th December 2026",
       subtitle: "Auspicious Beginnings, Traditional Rituals & Sangeet",
       events: [
         {
@@ -94,7 +94,7 @@ const WEDDING_CONFIG = {
       ]
     },
     {
-      dayTitle: "Day 2 · Sunday, 27 December 2026",
+      dayTitle: "Day 2 · Sunday, 27th December 2026",
       subtitle: "The Auspicious Wedding Day & Sacred Vows",
       badge: "The Wedding Day",
       events: [
