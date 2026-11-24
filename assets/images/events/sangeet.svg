@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <defs>
+    <linearGradient id="sangeetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7B1FA2" />
+      <stop offset="100%" stop-color="#311B92" />
+    </linearGradient>
+    <linearGradient id="sangeetGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700" />
+      <stop offset="100%" stop-color="#FF8F00" />
+    </linearGradient>
+  </defs>
+  <!-- Dholak Barrel -->
+  <path d="M22 28 C34 23 46 23 58 28 L54 52 C44 57 36 57 26 52 Z" fill="url(#sangeetGrad)" stroke="url(#sangeetGold)" stroke-width="1.8"/>
+  <!-- Dholak Heads -->
+  <ellipse cx="22" cy="40" rx="4" ry="12" fill="#D7CCC8" stroke="url(#sangeetGold)" stroke-width="1.5"/>
+  <ellipse cx="58" cy="40" rx="4" ry="12" fill="#D7CCC8" stroke="url(#sangeetGold)" stroke-width="1.5"/>
+  <!-- Cord straps (W-pattern) -->
+  <path d="M22 28 L38 55 L54 29" stroke="url(#sangeetGold)" stroke-width="1.2"/>
+  <path d="M26 52 L42 25 L58 52" stroke="url(#sangeetGold)" stroke-width="1.2"/>
+  <!-- Musical notes floating -->
+  <path d="M56 18 C58 12 66 10 68 14 L68 22" stroke="url(#sangeetGold)" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="64" cy="22" r="3" fill="url(#sangeetGold)"/>
+</svg>

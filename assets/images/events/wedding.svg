@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <defs>
+    <linearGradient id="fireGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#D32F2F" />
+      <stop offset="50%" stop-color="#F57C00" />
+      <stop offset="100%" stop-color="#FFEB3B" />
+    </linearGradient>
+    <linearGradient id="potGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE082" />
+      <stop offset="50%" stop-color="#FFB300" />
+      <stop offset="100%" stop-color="#FF6F00" />
+    </linearGradient>
+  </defs>
+  <!-- Sacred Havan Kund / Kalash base -->
+  <path d="M22 64 L58 64 L52 50 L28 50 Z" fill="url(#potGold)" stroke="#BF953F" stroke-width="1.5"/>
+  <rect x="18" y="64" width="44" height="4" rx="2" fill="url(#potGold)"/>
+  <!-- Sacred Agni / Flames -->
+  <path d="M40 18 C46 28 52 32 46 48 C43 45 42 42 39 42 C36 42 34 46 32 48 C28 34 34 26 40 18 Z" fill="url(#fireGrad)"/>
+  <path d="M40 28 C43 34 46 38 43 46 C41 44 40 43 38 43 C36 43 35 45 34 46 C32 38 36 33 40 28 Z" fill="#FFF9C4"/>
+  <!-- Swastika / Auspicious mark on Kund -->
+  <circle cx="40" cy="57" r="2.5" fill="#D32F2F"/>
+</svg>

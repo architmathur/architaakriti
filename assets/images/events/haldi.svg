@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <defs>
+    <linearGradient id="haldiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700" />
+      <stop offset="100%" stop-color="#FF9900" />
+    </linearGradient>
+  </defs>
+  <!-- Marigold Petals Pattern -->
+  <circle cx="40" cy="40" r="14" fill="#E65100" />
+  <g fill="url(#haldiGrad)" opacity="0.95">
+    <ellipse cx="40" cy="18" rx="7" ry="12"/>
+    <ellipse cx="40" cy="62" rx="7" ry="12"/>
+    <ellipse cx="18" cy="40" rx="12" ry="7"/>
+    <ellipse cx="62" cy="40" rx="12" ry="7"/>
+    <ellipse cx="25" cy="25" rx="7" ry="12" transform="rotate(-45 25 25)"/>
+    <ellipse cx="55" cy="55" rx="7" ry="12" transform="rotate(-45 55 55)"/>
+    <ellipse cx="55" cy="25" rx="7" ry="12" transform="rotate(45 55 25)"/>
+    <ellipse cx="25" cy="55" rx="7" ry="12" transform="rotate(45 25 55)"/>
+  </g>
+  <circle cx="40" cy="40" r="8" fill="#FFF3E0" />
+  <circle cx="40" cy="40" r="4" fill="#FF6F00" />
+</svg>

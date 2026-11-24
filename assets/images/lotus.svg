@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80" fill="none">
+  <defs>
+    <linearGradient id="lotusGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#BF953F" />
+      <stop offset="50%" stop-color="#FCF6BA" />
+      <stop offset="100%" stop-color="#AA771C" />
+    </linearGradient>
+  </defs>
+  <!-- Center Petal -->
+  <path d="M50 10 C46 30 42 50 50 62 C58 50 54 30 50 10 Z" fill="url(#lotusGold)" stroke="#B38728" stroke-width="0.8"/>
+  <!-- Inner Left Petal -->
+  <path d="M48 24 C34 32 30 52 46 63 C40 48 42 34 48 24 Z" fill="url(#lotusGold)" opacity="0.9" stroke="#B38728" stroke-width="0.8"/>
+  <!-- Inner Right Petal -->
+  <path d="M52 24 C66 32 70 52 54 63 C60 48 58 34 52 24 Z" fill="url(#lotusGold)" opacity="0.9" stroke="#B38728" stroke-width="0.8"/>
+  <!-- Outer Left Petal -->
+  <path d="M43 38 C22 42 16 60 40 66 C28 54 32 44 43 38 Z" fill="url(#lotusGold)" opacity="0.75" stroke="#B38728" stroke-width="0.8"/>
+  <!-- Outer Right Petal -->
+  <path d="M57 38 C78 42 84 60 60 66 C72 54 68 44 57 38 Z" fill="url(#lotusGold)" opacity="0.75" stroke="#B38728" stroke-width="0.8"/>
+  <!-- Base ripple -->
+  <path d="M25 68 C38 65 62 65 75 68" stroke="url(#lotusGold)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M35 73 C45 71 55 71 65 73" stroke="url(#lotusGold)" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

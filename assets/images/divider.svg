@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 40" fill="none">
+  <defs>
+    <linearGradient id="goldDiv" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#BF953F" stop-opacity="0" />
+      <stop offset="25%" stop-color="#BF953F" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#FCF6BA" stop-opacity="1" />
+      <stop offset="75%" stop-color="#BF953F" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#BF953F" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <!-- Center Motif -->
+  <g transform="translate(250, 20)">
+    <!-- Central diamond / floral emblem -->
+    <path d="M0,-12 L8,0 L0,12 L-8,0 Z" fill="url(#goldDiv)"/>
+    <circle cx="0" cy="0" r="3" fill="#3D0C11"/>
+    <!-- Left curls -->
+    <path d="M-12,0 C-25,-8 -40,10 -55,-2 C-70,-12 -85,-2 -110,-1" stroke="url(#goldDiv)" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+    <circle cx="-35" cy="0" r="2.5" fill="url(#goldDiv)"/>
+    <circle cx="-65" cy="-4" r="2" fill="url(#goldDiv)"/>
+    <!-- Right curls -->
+    <path d="M12,0 C25,-8 40,10 55,-2 C70,-12 85,-2 110,-1" stroke="url(#goldDiv)" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+    <circle cx="35" cy="0" r="2.5" fill="url(#goldDiv)"/>
+    <circle cx="65" cy="-4" r="2" fill="url(#goldDiv)"/>
+    <!-- Horizontal lines fading out -->
+    <line x1="-110" y1="-1" x2="-230" y2="-1" stroke="url(#goldDiv)" stroke-width="1.2" stroke-linecap="round"/>
+    <line x1="110" y1="-1" x2="230" y2="-1" stroke="url(#goldDiv)" stroke-width="1.2" stroke-linecap="round"/>
+  </g>
+</svg>

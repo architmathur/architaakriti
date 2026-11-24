@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <defs>
+    <linearGradient id="recGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCF6BA" />
+      <stop offset="50%" stop-color="#BF953F" />
+      <stop offset="100%" stop-color="#AA771C" />
+    </linearGradient>
+    <linearGradient id="royalBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A237E" />
+      <stop offset="100%" stop-color="#0D47A1" />
+    </linearGradient>
+  </defs>
+  <!-- Royal Crown / Crest -->
+  <path d="M20 54 L60 54 L64 34 L48 42 L40 22 L32 42 L16 34 Z" fill="url(#recGold)" stroke="#D4AF37" stroke-width="1.2"/>
+  <rect x="20" y="54" width="40" height="6" rx="2" fill="url(#recGold)"/>
+  <!-- Jewels -->
+  <circle cx="40" cy="22" r="3" fill="#D32F2F"/>
+  <circle cx="16" cy="34" r="2.5" fill="#1565C0"/>
+  <circle cx="64" cy="34" r="2.5" fill="#1565C0"/>
+  <circle cx="30" cy="57" r="1.5" fill="#FFFFFF"/>
+  <circle cx="40" cy="57" r="1.8" fill="#FFFFFF"/>
+  <circle cx="50" cy="57" r="1.5" fill="#FFFFFF"/>
+  <!-- Sparkles -->
+  <path d="M40 12 L41.5 16 L45 17 L41.5 18 L40 22 L38.5 18 L35 17 L38.5 16 Z" fill="url(#recGold)"/>
+</svg>

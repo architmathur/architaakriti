@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <defs>
+    <linearGradient id="mehendiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4CAF50" />
+      <stop offset="50%" stop-color="#2E7D32" />
+      <stop offset="100%" stop-color="#1B5E20" />
+    </linearGradient>
+    <linearGradient id="goldAcc" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700" />
+      <stop offset="100%" stop-color="#FFA000" />
+    </linearGradient>
+  </defs>
+  <!-- Paisley / Kalka motif -->
+  <path d="M40 70 C24 70 16 54 22 38 C28 22 46 14 54 10 C52 18 56 24 50 30 C42 38 46 48 52 48 C56 48 58 44 58 40 C64 52 60 70 40 70 Z" fill="url(#mehendiGrad)" stroke="url(#goldAcc)" stroke-width="1.5"/>
+  <circle cx="36" cy="46" r="6" fill="url(#goldAcc)"/>
+  <circle cx="36" cy="46" r="2.5" fill="#1B5E20"/>
+  <!-- Decorative dots -->
+  <circle cx="30" cy="34" r="2" fill="url(#goldAcc)"/>
+  <circle cx="26" cy="42" r="2" fill="url(#goldAcc)"/>
+  <circle cx="28" cy="52" r="2" fill="url(#goldAcc)"/>
+  <circle cx="36" cy="58" r="2" fill="url(#goldAcc)"/>
+  <circle cx="44" cy="62" r="2" fill="url(#goldAcc)"/>
+</svg>
