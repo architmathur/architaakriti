@@ -153,55 +153,49 @@ function renderDayWiseEvents() {
   if (!container || !WEDDING_CONFIG.eventDays) return;
 
   container.innerHTML = WEDDING_CONFIG.eventDays.map((dayGroup, dayIdx) => `
-    <div class="mb-14 reveal" style="transition-delay: ${dayIdx * 100}ms">
-      <!-- Day Header -->
-      <div class="ev-day-header">
-        <div class="ev-day-label">
-          <span class="ev-day-pill">Day ${dayIdx + 1}</span>
-          <h3 class="ev-day-title">${dayGroup.dayTitle.replace(/^Day \d+ · /, '')}</h3>
-          ${dayGroup.badge ? `<span class="ev-day-badge">${dayGroup.badge}</span>` : ''}
+    <div class="ev-day reveal" style="transition-delay: ${dayIdx * 150}ms">
+
+      <!-- Day Banner -->
+      <div class="ev-day__banner">
+        <div class="ev-day__banner-left">
+          <span class="ev-day__pill">Day ${dayIdx + 1}</span>
+          <div>
+            <h3 class="ev-day__date">${dayGroup.dayTitle.replace(/^Day \d+ · /, '')}</h3>
+            <p class="ev-day__subtitle">${dayGroup.subtitle}</p>
+          </div>
+          ${dayGroup.badge ? `<span class="ev-day__badge">${dayGroup.badge}</span>` : ''}
         </div>
-        <p class="ev-day-subtitle">${dayGroup.subtitle}</p>
-        <div class="ev-day-rule"></div>
+        <a href="https://maps.google.com/?q=Tanya+Resort+Alwar+Rajasthan" target="_blank" rel="noopener noreferrer" class="ev-day__venue-link">
+          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          Tanya Resort, Alwar
+        </a>
       </div>
 
-      <!-- Events Grid -->
-      <div class="ev-grid ev-grid--${dayGroup.events.length === 1 ? 'one' : dayGroup.events.length === 2 ? 'two' : 'three'}">
+      <!-- Events List -->
+      <div class="ev-list">
         ${dayGroup.events.map((evt, evtIdx) => `
-          <article class="ev-card">
-            <div class="ev-card__top">
-              <div class="ev-card__icon-wrap">
-                <img src="${evt.icon}" alt="${evt.name}" class="ev-card__icon" />
-              </div>
-              <div class="ev-card__title-block">
-                <h4 class="ev-card__name">${evt.name}</h4>
-                <div class="ev-card__time">
-                  <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <div class="ev-row">
+            <div class="ev-row__icon">
+              <img src="${evt.icon}" alt="${evt.name}" />
+            </div>
+            <div class="ev-row__body">
+              <div class="ev-row__top">
+                <h4 class="ev-row__name">${evt.name}</h4>
+                <span class="ev-row__time">
+                  <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                   ${evt.time}
-                </div>
+                </span>
               </div>
+              <p class="ev-row__tagline">${evt.tagline}</p>
+              <span class="ev-row__dress">
+                <svg width="11" height="11" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                ${evt.dressCode}
+              </span>
             </div>
-
-            <p class="ev-card__tagline">${evt.tagline}</p>
-
-            <div class="ev-card__meta">
-              <div class="ev-card__meta-row">
-                <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                <span>${evt.venue}, ${evt.address}</span>
-              </div>
-              <div class="ev-card__meta-row ev-card__dress">
-                <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3l14 9-14 9V3z"/></svg>
-                <span><strong>Dress Code:</strong> ${evt.dressCode}</span>
-              </div>
-            </div>
-
-            <a href="${evt.mapsLink}" target="_blank" rel="noopener noreferrer" class="ev-card__map-btn">
-              <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
-              View on Google Maps
-            </a>
-          </article>
+          </div>
         `).join('')}
       </div>
+
     </div>
   `).join('');
 }
@@ -244,16 +238,16 @@ function renderGallery() {
   if (!container || !WEDDING_CONFIG.gallery) return;
 
   container.innerHTML = WEDDING_CONFIG.gallery.map((item, index) => `
-    <div class="group relative overflow-hidden rounded-lg border border-yellow-700/40 bg-black/40 cursor-pointer shadow-lg reveal" 
+    <div class="gallery-card reveal"
          onclick="openLightbox('${item.img}', '${item.caption.replace(/'/g, "\\'")}', '${item.desc.replace(/'/g, "\\'")}')"
          style="transition-delay: ${index * 80}ms">
-      <div class="aspect-square w-full overflow-hidden">
-        <img src="${item.img}" alt="${item.caption}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+      <div class="gallery-card__img-wrap">
+        <img src="${item.img}" alt="${item.caption}" class="gallery-card__img" />
       </div>
-      <div class="absolute inset-0 bg-gradient-to-t from-red-950/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-center">
-        <h5 class="font-serif text-lg text-amber-200 font-bold mb-1">${item.caption}</h5>
-        <p class="text-xs text-amber-100/80 mb-2">${item.desc}</p>
-        <span class="text-[10px] tracking-widest uppercase text-amber-300">Tap to Zoom</span>
+      <div class="gallery-card__overlay">
+        <h5 class="gallery-card__caption">${item.caption}</h5>
+        <p class="gallery-card__desc">${item.desc}</p>
+        <span class="gallery-card__zoom">Tap to Zoom</span>
       </div>
     </div>
   `).join('');
@@ -267,9 +261,9 @@ function renderTravel() {
   if (!container || !WEDDING_CONFIG.travel) return;
 
   container.innerHTML = WEDDING_CONFIG.travel.map((info) => `
-    <div class="family-card p-6 rounded-lg text-center reveal">
-      <h4 class="font-serif text-lg font-bold text-amber-300 mb-2">${info.title}</h4>
-      <p class="text-xs md:text-sm text-stone-300 leading-relaxed">${info.desc}</p>
+    <div class="travel-card reveal">
+      <h4 class="travel-card__title">${info.title}</h4>
+      <p class="travel-card__desc">${info.desc}</p>
     </div>
   `).join('');
 }

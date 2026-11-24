@@ -38,9 +38,9 @@ const WEDDING_CONFIG = {
 
   // Background Music (YouTube or fallback MP3 / Synth)
   song: {
-    youtubeId: "-GZ-eEozdIg",
-    start: 5,
-    title: "Wedding Melody · Instrumental Celebration"
+    youtubeId: "-99Z8E1pOrs",
+    start: 0,
+    title: "Ishq Tera Tadpave (Oh Ho Ho Ho) · Sukhbir"
   },
 
   // Google Calendar Event
