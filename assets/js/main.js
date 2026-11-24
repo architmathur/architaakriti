@@ -162,37 +162,23 @@ function renderDayWiseEvents() {
 
       <!-- Alternating Palace Timeline -->
       <div class="timeline">
-        ${dayGroup.events.map((evt, evtIdx) => {
-          const calStart = dayIdx === 0
-            ? (evt.id === 'lagan' ? '20261226T103000' : evt.id === 'tel-madha-bhaat' ? '20261226T120000' : '20261226T180000')
-            : '20261227T140000';
-          const calEnd = dayIdx === 0
-            ? (evt.id === 'lagan' ? '20261226T123000' : evt.id === 'tel-madha-bhaat' ? '20261226T160000' : '20261226T230000')
-            : '20261227T230000';
-          const calUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(evt.name + ' · Archit & Aakriti')}&dates=${calStart}/${calEnd}&details=${encodeURIComponent(evt.tagline)}&location=${encodeURIComponent(evt.venue + ', ' + evt.address)}`;
-
-          return `
-            <article class="ev ev--${evt.id} reveal" style="--row: ${evtIdx + 1}">
-              <span class="ev__dot" aria-hidden="true"></span>
-              <div class="ev__icon" aria-hidden="true">
-                <img src="${evt.icon}" alt="${evt.name}" />
+        ${dayGroup.events.map((evt, evtIdx) => `
+          <article class="ev ev--${evt.id} reveal" style="--row: ${evtIdx + 1}">
+            <span class="ev__dot" aria-hidden="true"></span>
+            <div class="ev__icon" aria-hidden="true">
+              <img src="${evt.icon}" alt="${evt.name}" />
+            </div>
+            <div class="ev__body">
+              <h3>${evt.name}</h3>
+              <p class="ev__tag">${evt.tagline}</p>
+              <p class="ev__when">${dayIdx === 0 ? 'Saturday, 26 Dec 2026' : 'Sunday, 27 Dec 2026'}<span class="sep"></span>${evt.time}</p>
+              <p class="ev__venue">${evt.venue}, ${evt.address}</p>
+              <div class="ev__dress-wrap">
+                <span class="ev__dress">✦ Dress Code: ${evt.dressCode}</span>
               </div>
-              <div class="ev__body">
-                <h3>${evt.name}</h3>
-                <p class="ev__tag">${evt.tagline}</p>
-                <p class="ev__when">${dayIdx === 0 ? 'Saturday, 26 Dec 2026' : 'Sunday, 27 Dec 2026'}<span class="sep"></span>${evt.time}</p>
-                <p class="ev__venue">${evt.venue}, ${evt.address}</p>
-                <div class="ev__dress-wrap">
-                  <span class="ev__dress">✦ Dress Code: ${evt.dressCode}</span>
-                </div>
-                <div class="ev__actions">
-                  <a class="btn btn--sm" href="${calUrl}" target="_blank" rel="noopener">Add to calendar</a>
-                  <a class="btn btn--sm btn--ghost" href="${evt.mapsLink}" target="_blank" rel="noopener">Directions</a>
-                </div>
-              </div>
-            </article>
-          `;
-        }).join('')}
+            </div>
+          </article>
+        `).join('')}
       </div>
     </div>
   `).join('');
