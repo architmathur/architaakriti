@@ -76,6 +76,12 @@ body {
 .font-caps { font-family: var(--f-caps); }
 .font-serif { font-family: var(--f-serif); }
 .font-script { font-family: var(--f-script); }
+.cap-a {
+  font-family: "Pinyon Script", var(--f-script);
+  font-size: 1.15em;
+  display: inline-block;
+  line-height: 0.9;
+}
 .font-hindi { font-family: var(--f-hindi); }
 
 /* Shimmer Maroon text effect */
