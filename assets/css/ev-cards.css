@@ -193,7 +193,7 @@
 .ev__venue {
   font-family: var(--f-serif);
   color: var(--maroon);
-  margin: 0 0 14px;
+  margin: 0;
   font-size: 1.05rem;
   font-weight: 600;
 }

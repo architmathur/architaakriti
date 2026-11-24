@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initIntroDoors();
   initCountdown();
   renderDayWiseEvents();
-  renderGallery();
   renderTravel();
   initCalendarLinks();
   initPetalsCanvas();
@@ -173,9 +172,6 @@ function renderDayWiseEvents() {
               <p class="ev__tag">${evt.tagline}</p>
               <p class="ev__when">${dayIdx === 0 ? 'Saturday, 26 Dec 2026' : 'Sunday, 27 Dec 2026'}<span class="sep"></span>${evt.time}</p>
               <p class="ev__venue">${evt.venue}, ${evt.address}</p>
-              <div class="ev__dress-wrap">
-                <span class="ev__dress">✦ Dress Code: ${evt.dressCode}</span>
-              </div>
             </div>
           </article>
         `).join('')}
