@@ -153,49 +153,47 @@ function renderDayWiseEvents() {
   if (!container || !WEDDING_CONFIG.eventDays) return;
 
   container.innerHTML = WEDDING_CONFIG.eventDays.map((dayGroup, dayIdx) => `
-    <div class="ev-day reveal" style="transition-delay: ${dayIdx * 150}ms">
+    <div class="ev-day ev-day--${dayIdx + 1} reveal">
+      <!-- Ornate Day Head -->
+      <h3 class="ev-day__head" data-reveal>
+        <span class="ev-day__num">Day ${dayIdx + 1}</span>
+        <span class="ev-day__date">${dayGroup.dayTitle.replace(/^Day \d+ · /, '')}</span>
+      </h3>
 
-      <!-- Day Banner -->
-      <div class="ev-day__banner">
-        <div class="ev-day__banner-left">
-          <span class="ev-day__pill">Day ${dayIdx + 1}</span>
-          <div>
-            <h3 class="ev-day__date">${dayGroup.dayTitle.replace(/^Day \d+ · /, '')}</h3>
-            <p class="ev-day__subtitle">${dayGroup.subtitle}</p>
-          </div>
-          ${dayGroup.badge ? `<span class="ev-day__badge">${dayGroup.badge}</span>` : ''}
-        </div>
-        <a href="https://maps.google.com/?q=Tanya+Resort+Alwar+Rajasthan" target="_blank" rel="noopener noreferrer" class="ev-day__venue-link">
-          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          Tanya Resort, Alwar
-        </a>
-      </div>
+      <!-- Alternating Palace Timeline -->
+      <div class="timeline">
+        ${dayGroup.events.map((evt, evtIdx) => {
+          const calStart = dayIdx === 0
+            ? (evt.id === 'lagan' ? '20261226T103000' : evt.id === 'tel-madha-bhaat' ? '20261226T120000' : '20261226T180000')
+            : '20261227T140000';
+          const calEnd = dayIdx === 0
+            ? (evt.id === 'lagan' ? '20261226T123000' : evt.id === 'tel-madha-bhaat' ? '20261226T160000' : '20261226T230000')
+            : '20261227T230000';
+          const calUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(evt.name + ' · Archit & Aakriti')}&dates=${calStart}/${calEnd}&details=${encodeURIComponent(evt.tagline)}&location=${encodeURIComponent(evt.venue + ', ' + evt.address)}`;
 
-      <!-- Events List -->
-      <div class="ev-list">
-        ${dayGroup.events.map((evt, evtIdx) => `
-          <div class="ev-row">
-            <div class="ev-row__icon">
-              <img src="${evt.icon}" alt="${evt.name}" />
-            </div>
-            <div class="ev-row__body">
-              <div class="ev-row__top">
-                <h4 class="ev-row__name">${evt.name}</h4>
-                <span class="ev-row__time">
-                  <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                  ${evt.time}
-                </span>
+          return `
+            <article class="ev ev--${evt.id} reveal" style="--row: ${evtIdx + 1}">
+              <span class="ev__dot" aria-hidden="true"></span>
+              <div class="ev__icon" aria-hidden="true">
+                <img src="${evt.icon}" alt="${evt.name}" />
               </div>
-              <p class="ev-row__tagline">${evt.tagline}</p>
-              <span class="ev-row__dress">
-                <svg width="11" height="11" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                ${evt.dressCode}
-              </span>
-            </div>
-          </div>
-        `).join('')}
+              <div class="ev__body">
+                <h3>${evt.name}</h3>
+                <p class="ev__tag">${evt.tagline}</p>
+                <p class="ev__when">${dayIdx === 0 ? 'Saturday, 26 Dec 2026' : 'Sunday, 27 Dec 2026'}<span class="sep"></span>${evt.time}</p>
+                <p class="ev__venue">${evt.venue}, ${evt.address}</p>
+                <div class="ev__dress-wrap">
+                  <span class="ev__dress">✦ Dress Code: ${evt.dressCode}</span>
+                </div>
+                <div class="ev__actions">
+                  <a class="btn btn--sm" href="${calUrl}" target="_blank" rel="noopener">Add to calendar</a>
+                  <a class="btn btn--sm btn--ghost" href="${evt.mapsLink}" target="_blank" rel="noopener">Directions</a>
+                </div>
+              </div>
+            </article>
+          `;
+        }).join('')}
       </div>
-
     </div>
   `).join('');
 }
