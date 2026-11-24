@@ -10,8 +10,8 @@ const WEDDING_CONFIG = {
     parents: "Smt. Poonam Mathur & Sh. Atulya Mathur",
     dadi: "Smt. Laxmi Mathur",
     heavenlyBlessings: {
-      babaji: "Gopal Sharan Mathur (Babaji)",
-      nanaNani: "Satish Chandra Mathur & Savitri Mathur (Nana & Nani)"
+      babaji: "Late Gopal Sharan Mathur (Babaji)",
+      nanaNani: "Late Satish Chandra Mathur & Late Savitri Mathur (Nana & Nani)"
     }
   },
   bride: {
